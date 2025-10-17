@@ -1,0 +1,12 @@
+contacts = {}
+
+with open("contacts.txt", "r") as file:
+    for line in file:
+        parts = line.strip().split(",")
+        if len(parts) >= 2:
+            name = parts[0]
+            details = parts[1:]
+            contacts[name] = details
+
+for name in sorted(contacts):
+    print(name, contacts[name])
